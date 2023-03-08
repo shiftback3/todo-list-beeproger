@@ -29,3 +29,14 @@ php artisan serve
 You can check your browser or use postman on [Localhost:8000](http://localhost:8000).
 Now that the application is running you can run `php artisan test` to test the features of the APIs.
 
+**5.** Run `cd client` on a different Terminal and run :
+```
+npm install
+
+ng serve
+```
+and you Angular application will run on [Localhost:4200](http://localhost:4200) .
+
+## Thank You!
+**[Ogbu Garuba Sunday](https://ogbugarubasunday.surge.sh/)**
+
