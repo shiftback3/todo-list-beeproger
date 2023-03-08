@@ -35,7 +35,7 @@ npm install
 
 ng serve
 ```
-and you Angular application will run on [Localhost:4200](http://localhost:4200) .
+and your Angular application will run on [Localhost:4200](http://localhost:4200) .
 
 ## Thank You!
 **[Ogbu Garuba Sunday](https://ogbugarubasunday.surge.sh/)**
