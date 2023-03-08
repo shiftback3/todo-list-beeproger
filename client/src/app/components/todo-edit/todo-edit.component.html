@@ -1,0 +1,38 @@
+<div class="row">
+    <div role="button" (click)="goBack()" class="col-6 offset-3 d-flex justify-content-start">
+        <i class="bi bi-arrow-left-circle text-secondary me-3 fs-5"></i> Back
+    </div>
+</div>
+<div class="row mt-2 mx-1">
+    <div class="col-md-6 offset-md-3 col-sm-12">
+ <div class="row">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Enter Todo Title</label>
+        <input type="email" name="title" class="form-control" id="exampleFormControlInput1" placeholder="example todo" [formControl]="todoForm.controls['title']">
+        <div *ngIf="todoForm.controls.title.touched && todoForm.controls.title.errors" class="text text-danger">
+            Please provide todo title
+           </div>
+      </div>
+ </div>
+
+ <div class="d-flex">
+    <div class="flex-grow-1">
+        <input type="file" (change)="onFileSelected($event)"/>
+    </div>
+    <div class="">
+        <button [disabled]="!todoForm.valid" (click)="updateTodo()" type="button" class="btn btn-outline-success">
+            <div *ngIf="loading; else textShow" class="spinner-border text-success" role="status">
+                <!-- <span class="visually-hidden">Loading...</span> -->
+              </div>
+
+            <ng-template #textShow>Update Todo</ng-template>
+            </button>
+    </div>
+</div>
+
+
+     
+</div>
+  
+</div>
+

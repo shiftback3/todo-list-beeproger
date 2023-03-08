@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-6 offset-3 d-flex justify-content-end">
+        <button routerLink="/add" type="button" class="btn btn-outline-success">Add Todo</button>
+    </div>
+</div>
+<div class="row mt-2 mx-1">
+<div class="col-md-6 offset-md-3 col-sm-12">
+
+      <ul *ngIf="todos.length > 0; else noResult" class="list-group">
+    <li *ngFor="let item of todos" class="list-group-item d-flex flex-row">
+        <div class="form-check form-switch align-self-center me-3">
+            <input (change)="fieldsChange(item.id)" value="status" class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"[checked]="item.status == '1'">
+            <!-- <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox input</label> -->
+          </div>
+          <img [src]="imgBaseUrl + item.img_url" alt="" class="todo-img me-5">
+      <div class="ms-2 me-auto align-self-center">
+       
+        <div class="fw-bold" [ngClass]="{'mark-done': item.status == '1'}">{{item.title}}</div>
+    
+      </div>
+    <div class="align-self-center d-flex">  <i role="button" (click)="setEdit(item)" class="bi bi-pen text-primary mx-3 "></i><i role="button" (click)="confirmDelete(item.id)" class="bi bi-trash3 text-danger"></i></div>
+    </li>
+   
+  </ul>
+
+<ng-template #noResult>
+    <p>No Todo Items</p>
+</ng-template>
+
+
+  
+</div>
+  
+</div>
+
