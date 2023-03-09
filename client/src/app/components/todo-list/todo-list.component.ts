@@ -11,7 +11,7 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class TodoListComponent {
   
-  // imgBaseUrl: string ="https://todo-app.simplensmart.com/storage/" // set image base URL
+   // imgBaseUrl: string ="https://todo-app.simplensmart.com/storage/" // set image base URL
   imgBaseUrl: string ="http://localhost:8000/storage/" // set image base URL
   isChecked: boolean = false;
   todos!: Array<Todo>;

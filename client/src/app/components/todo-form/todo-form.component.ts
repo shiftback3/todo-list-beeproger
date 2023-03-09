@@ -43,18 +43,26 @@ export class TodoFormComponent {
     const formData = new FormData();
     formData.append('title',this.todoForm.value.title!) 
     formData.append('image',this.file)
-this.todoService.create('/todos',formData).subscribe(
-  response => {
-    this.toasterService.success(response.message);
-    this._location.back();
-    this.loading = false 
-  },
-  err => {
-    this.loading = false
-
-    this.toasterService.error("Validation Error!");
+this.todoService.create('/todos',formData).subscribe({
+  next: (response) => this.responseSuccess(response),
+  error: (e) => this.responseError(e)
+  })
+  
   }
-)
+
+  responseSuccess(response: any){
+    this.toasterService.success(response.message);
+      this._location.back();
+      this.loading = false 
+      this.file = null
+
+  }
+
+  responseError(error: any){
+       this.loading = false
+       this.file = null
+    // this.toasterService.error(response);
+    this.toasterService.error("Validation Error, please provide a valid image(.jpg, .png, .jpeg)!");
   }
 
 }

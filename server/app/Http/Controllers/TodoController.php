@@ -100,8 +100,8 @@ if(in_array($isImage , $extensions)){
         // Store data in DB
         try{
             $todos = Todo::where('id', $id)->first();
-            $image = '';
-            if($request->hasFile('image')) {
+            // $image = '';
+            if ($request->hasFile('image')) {
                
                 $extensions = ["jpg" , "jpeg" , "png" ];
                 $isImage = request("image")->getClientOriginalExtension(); 
@@ -114,13 +114,20 @@ if(in_array($isImage , $extensions)){
    
 }else{
     return $this->sendError('Server error', 'invalid Image format', 500);
-}
+                }
+
+                $todos->update([
+                    'title' => $request->title,
+                    'img_url' => $image,
+                ]);
+            } else {
+                $todos->update([
+                    'title' => $request->title,
+                    // 'img_url' => $image,
+                ]);
             }
             
-            $todos->update([
-                'title' => $request->title,
-                'img_url' => $image,
-            ]);
+           
             
             return $this->sendResponse($todos, 'Todos Updated successfully!');
         }

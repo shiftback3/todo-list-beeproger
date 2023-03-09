@@ -6,7 +6,7 @@ I Try to keep everything simple and direct, the client is created with Angular 1
 - The Backend was built with [Laravel 10](https://demo-api.simplensmart.com/api) and MySQL database, you can click the link to interact with the APIs and a basic [postman documentation](https://documenter.getpostman.com/view/9683241/2s93JqRjVH) for easy interaction with the backend.
 
 - The frontend is pretty basic and it is built with [Angular 15](https://todo-app.simplensmart.com/list) you can click on this link to checkout the live demo. Bootstrap 5.2 was also used for sytling and icons, it is a simple app so no state management was used.
-This [video](https://www.loom.com/share/e25af651a57f4b47b0bf420269aa0245) shows the working demo pf the application.
+This [video](https://www.loom.com/share/571f119693e94951971b4567d03ce4a5) shows the working demo pf the application.
 
 ## getting Started
 

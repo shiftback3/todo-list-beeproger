@@ -20,7 +20,7 @@
         <input type="file" (change)="onFileSelected($event)"/>
     </div>
     <div class="">
-        <button [disabled]="!todoForm.valid" (click)="addTodo()" type="button" class="btn btn-outline-success">
+        <button [disabled]="(!todoForm.valid) || (!file)" (click)="addTodo()" type="button" class="btn btn-outline-success">
             <div *ngIf="loading; else textShow" class="spinner-border text-success" role="status">
                 <!-- <span class="visually-hidden">Loading...</span> -->
               </div>

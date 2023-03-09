@@ -62,7 +62,8 @@ this.todoService.create('/todos/' + this.todoForm.value.id, formData).subscribe(
   err => {
     this.loading = false
 
-    this.toasterService.error("Validation Error!");
+    this.toasterService.error("Validation Error, please provide a valid image(.jpg, .png, .jpeg)!");
+
   }
 )
   }
